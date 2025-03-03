@@ -1,0 +1,37 @@
+{
+  "name": "group-gains-server",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "email": "email dev --dir src/emails"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@paddle/paddle-node-sdk": "^2.5.0",
+    "@react-email/components": "0.0.32",
+    "@react-email/render": "1.0.4",
+    "axios": "^1.7.9",
+    "better-auth": "^1.1.14",
+    "buffer-crc32": "^1.0.0",
+    "crc-32": "^1.2.2",
+    "dotenv": "^16.4.7",
+    "hono": "^4.6.17",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "node-telegram-bot-api": "^0.66.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "resend": "^4.1.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/buffer-crc32": "^0.2.4",
+    "@types/node": "^20.11.17",
+    "@types/node-telegram-bot-api": "^0.64.7",
+    "react-email": "3.0.6",
+    "tsx": "^4.7.1",
+    "typescript": "^5.7.3"
+  }
+}
