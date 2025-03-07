@@ -58,8 +58,19 @@ Once the bot has admin privileges, you can continue using the **Telegram-Gain** 
 `;
 
 export const assignGroup = () => {
-  console.log("Assign Group Handler Initialized");
-  bot.onText(/\/assign (.+)/, async (msg, match) => {
+  bot.on("channel_post", (msg) => {
+    console.log("📩 Received message in chat:", msg.chat);
+    console.log("🔤 Message text:", msg.text);
+    console.log("👤 Sender:", msg.from);
+  
+    if (msg.chat.type === "group" || msg.chat.type === "supergroup") {
+      bot.sendMessage(msg.chat.id, "✅ I received your message in the group!");
+    } else {
+      console.log("❌ This is NOT a group message.");
+    }
+  });
+  
+    bot.onText(/\/assign (.+)/, async (msg, match) => {
     console.log("assigned group");
 
     const chatId = msg.chat.id; // User's chat ID
